@@ -19,6 +19,9 @@ header ul{
 header li{
     list-style: none;
 }
+header li a{
+    text-decoration: none;
+}
 .pink{
     margin-right: 30%;
 }
@@ -43,6 +46,10 @@ header ul{
 }
 header li:hover{
     color: blue;
+    cursor: pointer;
+}
+header li a:hover{
+        color: blue;
     cursor: pointer;
 }
 .last{
