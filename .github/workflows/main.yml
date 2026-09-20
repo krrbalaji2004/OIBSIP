@@ -1,4 +1,4 @@
-name: Deploy Temperature Converter
+name: Deploy OIBSIP Projects
 
 on:
   push:
@@ -28,17 +28,33 @@ jobs:
 
       - name: Prepare Website
         run: |
-          mkdir -p public
-          cp "Temperature convertor Level 1 Task 3/index.html" public/index.html
-          cp "Temperature convertor Level 1 Task 3/style.css" public/style.css
-          cp "Temperature convertor Level 1 Task 3/script.js" public/script.js
+          mkdir -p public/task2
+          mkdir -p public/task3
+
+          cp "Level 1 Task 2 Personal Portfolio/index.html" public/task2/index.html
+          cp "Level 1 Task 2 Personal Portfolio/style.css" public/task2/style.css
+          cp "Level 1 Task 2 Personal Portfolio/script.js" public/task2/script.js
+
+          cp "Level 1 Task 2 Personal Portfolio/image.png" public/task2/image.png
+          cp "Level 1 Task 2 Personal Portfolio/smart1.jpg" public/task2/smart1.jpg
+          cp "Level 1 Task 2 Personal Portfolio/smart3.jpg" public/task2/smart3.jpg
+          cp "Level 1 Task 2 Personal Portfolio/smart4.jpg" public/task2/smart4.jpg
+          cp "Level 1 Task 2 Personal Portfolio/sql.jpg" public/task2/sql.jpg
+          cp "Level 1 Task 2 Personal Portfolio/js.png" public/task2/js.png
+          cp "Level 1 Task 2 Personal Portfolio/ORACLE CERTIFICATE_page-0001.jpg" "public/task2/ORACLE CERTIFICATE_page-0001.jpg"
+          cp "Level 1 Task 2 Personal Portfolio/balaji final resume.pdf" "public/task2/balaji final resume.pdf"
+
+          cp "Temperature convertor Level 1 Task 3/index.html" public/task3/index.html
+          cp "Temperature convertor Level 1 Task 3/style.css" public/task3/style.css
+          cp "Temperature convertor Level 1 Task 3/script.js" public/task3/script.js
 
       - name: Check Website Files
         run: |
-          echo "Files inside public:"
-          ls -la public
-          echo "Checking index.html:"
-          head -20 public/index.html
+          echo "Task 2 files:"
+          ls -la public/task2
+
+          echo "Task 3 files:"
+          ls -la public/task3
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
