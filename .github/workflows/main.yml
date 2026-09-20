@@ -29,8 +29,9 @@ jobs:
       - name: Prepare Website
         run: |
           mkdir -p public
-          cp "Web Development Level 1 Landing Page/index.html" public/index.html
-          cp "Web Development Level 1 Landing Page/style.css" public/style.css
+cp "Temperature convertor Level 1 Task 3/index.html" public/index.html
+cp "Temperature convertor Level 1 Task 3/style.css" public/style.css
+cp "Temperature convertor Level 1 Task 3/script.js" public/script.js
 
       - name: Check Website Files
         run: |
