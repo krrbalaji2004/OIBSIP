@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Update package list
+sudo apt update
+
+# Install UFW
+sudo apt install ufw -y
+
+# Enable UFW
+sudo ufw enable
+
+# Allow SSH
+sudo ufw allow ssh
+
+# Deny HTTP
+sudo ufw deny http
+
+# Additional rule 1: Allow HTTPS
+sudo ufw allow https
+
+# Additional rule 2: Allow DNS
+sudo ufw allow 53
+
+# Display firewall status
+sudo ufw status verbose

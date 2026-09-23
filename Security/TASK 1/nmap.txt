@@ -1,0 +1,100 @@
+NMAP NETWORK SCAN RESULTS
+=========================
+
+Target IP:
+192.168.1.38
+
+Target:
+Local Windows 11 machine
+
+-----------------------------------
+1. BASIC NMAP SCAN
+-----------------------------------
+
+Command:
+nmap 192.168.1.38
+
+Open Ports:
+
+135/tcp   open   msrpc
+139/tcp   open   netbios-ssn
+445/tcp   open   microsoft-ds
+16992/tcp open   amt-soap-http
+
+996 TCP ports were reported as closed.
+
+-----------------------------------
+2. SERVICE VERSION SCAN
+-----------------------------------
+
+Command:
+nmap -sV 192.168.1.38
+
+Results:
+
+135/tcp   open   msrpc          Microsoft Windows RPC
+139/tcp   open   netbios-ssn    Microsoft Windows netbios-ssn
+445/tcp   open   microsoft-ds? 
+16992/tcp open   amt-soap-http?
+
+Service Info:
+OS: Windows
+
+-----------------------------------
+3. OS DETECTION
+-----------------------------------
+
+Command:
+nmap -O 192.168.1.38
+
+Device Type:
+General purpose
+
+Operating System:
+Microsoft Windows 11
+
+OS Details:
+Microsoft Windows 11 24H2 - 25H2
+
+Network Distance:
+0 hops
+
+-----------------------------------
+4. OPEN PORT SUMMARY
+-----------------------------------
+
+135/tcp  - MSRPC
+139/tcp  - NetBIOS Session Service
+445/tcp  - Microsoft-DS / SMB
+16992/tcp - Intel AMT HTTP
+
+-----------------------------------
+5. SECURITY ANALYSIS
+-----------------------------------
+
+Port 135:
+MSRPC is used by Windows for communication between
+network services and applications. Exposure can increase
+the attack surface if the service is accessible from
+untrusted networks.
+
+Port 139:
+NetBIOS Session Service supports older Windows network
+communication and file/printer sharing. It should not
+normally be exposed to untrusted external networks.
+
+Port 445:
+SMB is used for Windows file and printer sharing.
+Improperly exposed or outdated SMB services can create
+security risks. Access should be restricted to trusted
+networks and systems should be kept updated.
+
+Port 16992:
+This port is associated with Intel Active Management
+Technology (AMT) HTTP management. Management interfaces
+should be protected and restricted to authorized users
+and networks.
+
+Note:
+This scan was performed only against my own local Windows
+machine for educational purposes.
